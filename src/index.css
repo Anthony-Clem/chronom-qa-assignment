@@ -1,0 +1,96 @@
+/* Base theme */
+:root {
+  --bg: #f5f7fb;
+  --bg-card: #ffffff;
+  --border: #e2e8f0;
+  --text: #1e293b;
+  --text-light: #64748b;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;
+  --success-hover: #801515;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+}
+
+h1, h2, h3 { font-weight: 600; letter-spacing: .5px; }
+h1 { margin: 0 0 1.25rem; font-size: clamp(1.9rem, 4vw, 2.6rem); }
+h2 { margin: 0 0 1rem; font-size: clamp(1.3rem, 3vw, 1.8rem); }
+
+/* Utility */
+.centered-page { width: 100%; max-width: 780px; margin: 0 auto; }
+.stack { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.25rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s ease;
+}
+.card:hover { box-shadow: var(--shadow-md); }
+
+/* Form */
+form.card-form { display: flex; flex-direction: column; gap: 1.1rem; }
+.field { display:flex; flex-direction:column; gap:.4rem; text-align:left; }
+label { font-size:.85rem; font-weight:600; text-transform:uppercase; letter-spacing:.5px; color: var(--text-light); }
+input[type="email"], input[type="password"] {
+  padding: .7rem .8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: .95rem;
+  background: #fff;
+  transition: border-color .15s, box-shadow .15s;
+}
+input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.25); }
+.helper { margin-top:-.4rem; font-size:.7rem; color: var(--text-light); }
+.error { color:#dc2626; font-size:.85rem; margin-top:.25rem; }
+
+/* Buttons */
+button { font-family: inherit; font-size:.9rem; font-weight:600; letter-spacing:.5px; }
+.btn { cursor:pointer; user-select:none; border:none; border-radius: var(--radius-sm); display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.65rem 1.05rem; line-height:1.1; transition: background-color .15s, box-shadow .15s; }
+.btn-primary { background: var(--primary); color:#fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-like { background: var(--success); color:#fff; }
+.btn-like:hover { background: var(--success-hover); }
+.btn-outline { background:#fff; color: var(--text); border:1px solid var(--border); }
+.btn-outline:hover { background:#f1f5f9; }
+
+/* Breeds chips */
+.breeds-grid { list-style:none; display:flex; flex-wrap:wrap; gap:.75rem; padding:0; justify-content:center; }
+.breed-chip { background: var(--primary); color:#fff; border:none; border-radius: 999px; padding:.45rem .95rem; font-size:.8rem; letter-spacing:.5px; text-transform: lowercase; box-shadow: var(--shadow-sm); cursor:pointer; transition: background-color .15s, transform .15s; }
+.breed-chip:hover { background: var(--primary-hover); }
+.like-inline { background: var(--success); border:none; color:#fff; border-radius:999px; padding:.45rem .85rem; font-size:.7rem; cursor:pointer; box-shadow: var(--shadow-sm); }
+.like-inline:hover { background: var(--success-hover); }
+.breed-pair { display:flex; align-items:center; gap:.4rem; }
+
+/* Image area */
+.image-shell { margin-top:2rem; display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.image-frame { width:100%; max-width:420px; border:1px solid var(--border); background:#fff; border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-sm); }
+.image-frame img { display:block; width:100%; height:auto; }
+
+/* Small responsive tweaks */
+@media (max-width: 600px) {
+  .card { padding:1.5rem 1.25rem 2rem; }
+  .breeds-grid { gap:.55rem; }
+  .breed-chip { padding:.4rem .8rem; }
+}

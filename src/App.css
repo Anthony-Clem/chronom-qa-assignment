@@ -1,0 +1,6 @@
+/* Page-specific overrides or additions */
+.login h1, .breeds h1 { text-align:center; }
+.login { width:100%; display:flex; flex-direction:column; align-items:center; }
+.breeds { width:100%; display:flex; flex-direction:column; align-items:center; }
+.image-container { width:100%; }
+.like-btn { font-size:.7rem; }
