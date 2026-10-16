@@ -13,7 +13,7 @@ function Breeds() {
   
 
   useEffect(() => {
-    fetch('/breeeeeds.json')
+    fetch('/breeds.json')
       .then(response => {
         if (!response.ok) throw new Error('Failed to load breeds list');
         return response.json();
